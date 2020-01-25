@@ -4,7 +4,7 @@
 #include "memory_practice.h"
 
 int main() {
-  mem_function();
+  /*mem_function();
 
   int * p = new int;  
   *p = 3;
@@ -15,6 +15,13 @@ int main() {
   delete p;
 
   std::cout << "deleting p." << std::endl;
+  std::cout << *p << std::endl;*/
+
+  int * p = allocate_int(7);
+  std::cout << *p << std::endl;
+
+  delete p;
+
   std::cout << *p << std::endl;
 
   return 0;
@@ -39,4 +46,10 @@ void mem_pass_by_ref(int &passed_num) {
   printf("&passed_num = %p\n", &passed_num);
 
   return;
+}
+
+int * allocate_int(int num) {
+  int * p = new int(num);
+
+  return p;
 }
